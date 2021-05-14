@@ -1,3 +1,5 @@
+vim.g.nvim_tree_disable_netrw = 0 -- "1 by default, disables netrw (must be called before packadd in plugins)
+
 O = {
     auto_close_tree = 0,
     auto_complete = true,
@@ -7,7 +9,7 @@ O = {
     number = true,
     relative_number = true,
     shell = 'bash',
-	timeoutlen = 100,
+    timeoutlen = 100,
 
     -- @usage pass a table with your desired languages
     treesitter = {
@@ -25,15 +27,29 @@ O = {
         formatter = '',
         autoformat = false,
         isort = false,
-        diagnostics = {virtual_text = {spacing = 0, prefix = ""}, signs = true, underline = true},
-		analysis = {type_checking = "basic", auto_search_paths = true, use_library_code_types = true}
+        diagnostics = {
+            virtual_text = {spacing = 0, prefix = ""},
+            signs = true,
+            underline = true
+        },
+        analysis = {
+            type_checking = "basic",
+            auto_search_paths = true,
+            use_library_code_types = true
+        }
     },
-    dart = {sdk_path = '/usr/lib/dart/bin/snapshots/analysis_server.dart.snapshot'},
+    dart = {
+        sdk_path = '/usr/lib/dart/bin/snapshots/analysis_server.dart.snapshot'
+    },
     lua = {
         -- @usage can be 'lua-format'
         formatter = '',
         autoformat = false,
-        diagnostics = {virtual_text = {spacing = 0, prefix = ""}, signs = true, underline = true}
+        diagnostics = {
+            virtual_text = {spacing = 0, prefix = ""},
+            signs = true,
+            underline = true
+        }
     },
     sh = {
         -- @usage can be 'shellcheck'
@@ -41,7 +57,11 @@ O = {
         -- @usage can be 'shfmt'
         formatter = '',
         autoformat = false,
-        diagnostics = {virtual_text = {spacing = 0, prefix = ""}, signs = true, underline = true}
+        diagnostics = {
+            virtual_text = {spacing = 0, prefix = ""},
+            signs = true,
+            underline = true
+        }
     },
     tsserver = {
         -- @usage can be 'eslint'
@@ -49,34 +69,57 @@ O = {
         -- @usage can be 'prettier'
         formatter = '',
         autoformat = false,
-        diagnostics = {virtual_text = {spacing = 0, prefix = ""}, signs = true, underline = true}
+        diagnostics = {
+            virtual_text = {spacing = 0, prefix = ""},
+            signs = true,
+            underline = true
+        }
     },
     json = {
         -- @usage can be 'prettier'
         formatter = '',
         autoformat = false,
-        diagnostics = {virtual_text = {spacing = 0, prefix = ""}, signs = true, underline = true}
+        diagnostics = {
+            virtual_text = {spacing = 0, prefix = ""},
+            signs = true,
+            underline = true
+        }
     },
-    tailwindls = {filetypes = {'html', 'css', 'scss', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact'}},
-    clang = {diagnostics = {virtual_text = {spacing = 0, prefix = ""}, signs = true, underline = true}},
-	ruby = {
-		diagnostics = {virtualtext = {spacing = 0, prefix = ""}, signs = true, underline = true},
-		filetypes = {'rb', 'erb', 'rakefile'}
-	},
+    tailwindls = {
+        filetypes = {
+            'html', 'css', 'scss', 'javascript', 'javascriptreact',
+            'typescript', 'typescriptreact'
+        }
+    },
+    clang = {
+        diagnostics = {
+            virtual_text = {spacing = 0, prefix = ""},
+            signs = true,
+            underline = true
+        }
+    },
+    ruby = {
+        diagnostics = {
+            virtualtext = {spacing = 0, prefix = ""},
+            signs = true,
+            underline = true
+        },
+        filetypes = {'rb', 'erb', 'rakefile'}
+    },
     -- css = {formatter = '', autoformat = false, virtual_text = true},
     -- json = {formatter = '', autoformat = false, virtual_text = true}
 
-	dashboard = {
-		custom_header = {
-'                 _..._                                                                           ',
-'               .\'   (_`.    _                         __     ___           ',
-'              :  .      :  | |   _   _ _ __   __ _ _ _\\ \\   / (_)_ __ ___  ',
-'              :)    ()  :  | |  | | | | \'_ \\ / _` | \'__\\ \\ / /| | \'_ ` _ \\ ',
-'              `.   .   .\'  | |__| |_| | | | | (_| | |   \\ V / | | | | | | |',
-'                `-...-\'    |_____\\__,_|_| |_|\\__,_|_|    \\_/  |_|_| |_| |_|',
-		},
-		footer= {'chrisatmachine.com'}
-	}
+    dashboard = {
+        custom_header = {
+            '                 _..._                                                                           ',
+            '               .\'   (_`.    _                         __     ___           ',
+            '              :  .      :  | |   _   _ _ __   __ _ _ _\\ \\   / (_)_ __ ___  ',
+            '              :)    ()  :  | |  | | | | \'_ \\ / _` | \'__\\ \\ / /| | \'_ ` _ \\ ',
+            '              `.   .   .\'  | |__| |_| | | | | (_| | |   \\ V / | | | | | | |',
+            '                `-...-\'    |_____\\__,_|_| |_|\\__,_|_|    \\_/  |_|_| |_| |_|'
+        },
+        footer = {'chrisatmachine.com'}
+    }
 }
 
 DATA_PATH = vim.fn.stdpath('data')
